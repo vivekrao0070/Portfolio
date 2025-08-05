@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krithika | Portfolio</title>
+  <style>
+    :root {
+      --primary: #6a11cb;
+      --accent: #2575fc;
+      --bg: #f7f9fc;
+      --text: #111;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      z-index: 10;
+      animation: slideDown 0.6s ease;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      margin: 0 20px;
+      font-weight: bold;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      color: white;
+      text-align: center;
+      padding: 60px 20px 80px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    header h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInUp 1s ease;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--primary);
+      padding-left: 10px;
+    }
+
+    /* Skills */
+    .skills ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skills li {
+      background: var(--primary);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .skills li:hover {
+      transform: scale(1.1);
+      background: var(--accent);
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-card h3 {
+      padding: 15px;
+      color: var(--primary);
+    }
+
+    .project-card p {
+      padding: 0 15px 15px;
+      font-size: 15px;
+    }
+
+    /* Contact */
+    .contact a {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #777;
+      background: #fff;
+      margin-top: 40px;
+    }
+
+    /* Animations */
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 30px;
+      }
+
+      nav a {
+        margin: 0 10px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <img src="krithi.jpg" alt="Krithika"  style="width: 150px; height: 200px; border:none;" />
+    <h1>Krithika</h1>
+    <p>Frontend Developer crafting delightful user experiences with code and creativity.</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm a frontend developer and computer science student from SRM University. I love building beautiful, responsive websites that are user-focused and performance-optimized.</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Bootstrap</li>
+      <li>Responsive Design</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+     
+        <h3>Personal Portfolio</h3>
+        <p>A fully responsive personal website built with HTML, CSS, and animation effects.</p>
+      </div>
+      <div class="project-card">
+       
+        <h3>Weather App</h3>
+        <p>Weather dashboard using JavaScript and OpenWeatherMap API with live location fetch.</p>
+      </div>
+      <div class="project-card">
+
+        <h3>To-Do App</h3>
+        <p>Simple productivity app that stores tasks locally with elegant animations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:krithika@gmail.com">krithika@gmail.com</a></p>
+  </section>
+
+
+
+</body>
+</html>
